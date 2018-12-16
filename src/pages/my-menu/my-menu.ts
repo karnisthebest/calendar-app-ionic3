@@ -51,7 +51,7 @@ export class MyMenuPage {
       location: item.location, // here
       id: id
     }
-    this.navCtrl.push("MyDetailPage", {
+    this.navCtrl.push("VotePage", {
       data: data
     })
   }
