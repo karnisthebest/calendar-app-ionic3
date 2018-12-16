@@ -7,7 +7,12 @@ ion-item-divider[style]{
     font-size: 20px;
     font-weight: bold;
 }
-    
+
+ion-title[mid]{
+    text-align: center;
+    padding: 0px;
+    margin:0px;
+}
    
 .content-md {
     background-color: #f7f7f7 !important;
@@ -40,6 +45,7 @@ ion-content.content-ios[padding] .scroll-content {
 .item-inner ion-label {
     white-space: normal;
 }
-  
+
+
 
 }

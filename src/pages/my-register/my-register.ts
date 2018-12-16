@@ -5,6 +5,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 import { AuthService } from '../services/auth.service';
+
 /**
  * Generated class for the MyRegisterPage page.
  *
@@ -29,6 +30,7 @@ export class MyRegisterPage {
   errorMessage: string = '';
   successMessage: string = '';
   rePasswordError: string ='';
+  testhide: boolean = false;
 
   // =================================
 
@@ -110,17 +112,16 @@ export class MyRegisterPage {
           console.log(res);
           this.errorMessage = "";
           this.successMessage = "Your account has been created. Please log in.";
+          this.testhide = true;       
         }, err => {
           console.log(err);
           this.errorMessage = err.message;
           this.successMessage = "";
         })
     } // end else 
-
   }
 
   goLoginPage(){
-    this.navCtrl.pop();
+    this.navCtrl.push("MyLoginPage");
   }
-
 }

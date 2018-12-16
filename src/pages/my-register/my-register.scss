@@ -21,6 +21,14 @@ page-my-register {
         font-size: 1.6rem;
       font-weight: 500;
     }
+    ion-title[pic]{
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    ion-content[nopd]{
+      padding-top: 0px;
+    }
   
   }
   

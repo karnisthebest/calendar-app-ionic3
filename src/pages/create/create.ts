@@ -64,7 +64,8 @@ export class CreatePage {
     myCalendar.onDidDismiss((dates, type) => {
      
       if (type === 'done') {
-        this.dates = [...dates.map(e => e.dateObj)]
+        this.dateArray = [...dates.map(e => e.string)]
+        console.log(this.dateArray);
       }
     })
   }
@@ -99,6 +100,7 @@ export class CreatePage {
   onSubmit(value){
     let data = {
       title: value.title,
+      date: this.dateArray,
       description: value.description,
       location: value.location,
      

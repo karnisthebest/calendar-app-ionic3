@@ -1,15 +1,15 @@
 
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar [hideBackButton]="false" color="primary">
     <ion-title>Register</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="form-content">
+<ion-content nopd padding class="form-content">
     <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
     
-      <ion-title>
-        <ion-img style="width: 200px; height: 200px; background: transparent !important;" src="../assets/imgs/Vote.png"></ion-img>
+      <ion-title pic>
+        <ion-img style="width: 220px; height: 220px; background: transparent !important;" src="../assets/imgs/Vote.png"></ion-img>
       </ion-title>
     
       <ion-list>
@@ -54,16 +54,17 @@
         </div>
 
         <label class="error-message">{{rePasswordError}}</label>
+        <label class="success-message">{{successMessage}}</label>
       </ion-list>
     
     
     
     
       <button ion-button full type="submit" [disabled]="!validations_form.valid">Register</button>
+      <button ion-button full type="submit" [disabled]="testhide == false" (click)="goLoginPage()">Back to Login</button>
+
       <label class="error-message">{{errorMessage}}</label>
-      <label class="success-message">{{successMessage}}</label>
-     
-    
+      
     </form>
 
 </ion-content>
