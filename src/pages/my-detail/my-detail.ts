@@ -23,6 +23,15 @@ export class MyDetailPage {
   item: any;
   loading: any;
 
+  dateArray: any;
+  
+  newObj: any = [
+    {date:"2018-01-02", checked: false},
+    {date:"2018-01-02", checked: false},
+    {date:"2018-01-02", checked: false},
+
+  ];
+
   constructor(
     private navParams: NavParams,
     private alertCtrl: AlertController,
@@ -38,7 +47,22 @@ export class MyDetailPage {
 
   ionViewWillLoad(){
     this.getData()
+    // this.mapThis()
   }
+
+  // mapThis(){
+  //   this.newObj = this.dateArray.map(x => {
+      
+  //   console.log(x);
+  //   // this.newObj  = {
+  //   //  date:""
+  //   //  checked:""
+  //   // })
+
+  // }
+
+
+  
 
   getData(){
     this.item = this.navParams.get('data');
@@ -47,6 +71,8 @@ export class MyDetailPage {
       description: new FormControl(this.item.description, Validators.required),
       location: new FormControl(this.item.location, Validators.required), //here
     });
+    this.dateArray = this.item.date;
+    console.log(this.dateArray);
   }
 
   dismiss() {
@@ -89,6 +115,10 @@ export class MyDetailPage {
       ]
     });
     confirm.present();
+  }
+
+  openVotes(){
+    
   }
 
   // openImagePicker(){

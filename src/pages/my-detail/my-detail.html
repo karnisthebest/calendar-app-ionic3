@@ -14,10 +14,6 @@
       <ion-input type="text" formControlName="title" class="form-control" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating color="primary">Date</ion-label>
-      <ion-input type="text" formControlName="date" class="form-control" required></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label floating color="primary">Description</ion-label>
       <ion-input type="text" formControlName="description" class="form-control" required></ion-input>
     </ion-item>
@@ -25,8 +21,28 @@
       <ion-label floating color="primary">Location</ion-label>
       <ion-input type="text" formControlName="location" class="form-control" required></ion-input>
     </ion-item>
+    <ion-item (click)="openVotes()" detail-push>
+      <ion-icon name="ios-calendar-outline" item-start></ion-icon>
+      Votes
+    </ion-item>
+    <ion-item *ngFor="let date of dateArray">
+      {{date}}
+    </ion-item>
+  
     <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Save</button>
   </form>
+  <!-- <ion-item >
+    <ion-label>{{dateArray}}</ion-label>
+    <ion-checkbox [(ngModel)]="dateArray"></ion-checkbox>
+  </ion-item> -->
+  <ion-item *ngFor="let item of newObj">
+      <ion-label>{{item.date}}</ion-label>
+      <ion-checkbox checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+    </ion-item>
+
+  
+  
   <button class="form-action-button" ion-button block color="danger" (click)="delete()">Delete</button>
+
 
 </ion-content>

@@ -46,6 +46,7 @@ export class MyMenuPage {
     // debugger
     let data = {
       title: item.title,
+      date: item.date,
       description: item.description,
       location: item.location, // here
       id: id
