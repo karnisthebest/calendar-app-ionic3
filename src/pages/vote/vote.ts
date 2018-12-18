@@ -32,20 +32,21 @@ export class VotePage {
   ];
   
 
-  constructor(private navParams: NavParams,
+  constructor(
+    private navParams: NavParams,
     private alertCtrl: AlertController,
     private viewCtrl: ViewController,
     private toastCtrl: ToastController,
     private formBuilder: FormBuilder,
 
-    private firebaseService: FirebaseService,
-    private loadingCtrl: LoadingController
-    ) {
+    private firebaseService: FirebaseService
+  ) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VotePage');
-    
+    this.getData();
   }
 
   getData(){
@@ -56,10 +57,25 @@ export class VotePage {
       location: new FormControl(this.item.location, Validators.required), //here
     });
     this.dateArray = this.item.date;
-    
     console.log(this.dateArray);
-    console.log(this.validations_form);
-    
+  }
+
+  dismiss() {
+   this.viewCtrl.dismiss();
+  }
+
+  onSubmit(value){
+    let data = {
+      title: value.title,
+      description: value.description,
+      location: value.location
+    }
+    this.firebaseService.updateTask(this.item.id,data)
+    .then(
+      res => {
+        this.viewCtrl.dismiss();
+      }
+    )
   }
   
 }

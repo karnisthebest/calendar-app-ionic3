@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, ModalController, Nav } from 'ionic-angular';
 
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
@@ -13,10 +13,11 @@ import { FirebaseService } from '../services/firebase.service';
   templateUrl: 'my-menu.html',
 })
 export class MyMenuPage {
+ 
 
   items: Array<any>;
   itemsCreate: Array<any>;
-
+  
   constructor(private navCtrl: NavController,
     private modalCtrl: ModalController,
     private authService: AuthService,
@@ -24,25 +25,25 @@ export class MyMenuPage {
   }
 
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.getData();
   }
 
-  getData(){
+  getData() {
     this.firebaseService.getTasks()
-    .then(tasks => {
-      this.items = tasks;
-    })
+      .then(tasks => {
+        this.items = tasks;
+      })
   }
 
-  getDataCreate(){
+  getDataCreate() {
     this.firebaseService.getTasks()
-    .then(tasks => {
-      this.itemsCreate = tasks;
-    })
+      .then(tasks => {
+        this.itemsCreate = tasks;
+      })
   }
 
-  viewDetails(id, item){
+  goVote(id, item) {
     // debugger
     let data = {
       title: item.title,
@@ -56,7 +57,21 @@ export class MyMenuPage {
     })
   }
 
-  openNewUserModal(){
+  viewDetails(id, item) {
+    // debugger
+    let data = {
+      title: item.title,
+      date: item.date,
+      description: item.description,
+      location: item.location, // here
+      id: id
+    }
+    this.navCtrl.push("MyDetailPage", {
+      data: data
+    })
+  }
+
+  openNewUserModal() {
     let modal = this.modalCtrl.create("MyNewTaskModalPage");
     modal.onDidDismiss(data => {
       this.getData();
@@ -65,11 +80,11 @@ export class MyMenuPage {
   }
 
 
-  
- 
+
+
   // click fab button 
   goCreatePage() {
-     // go to create page using modal  
+    // go to create page using modal  
     let modal = this.modalCtrl.create("CreatePage");
     //return back to create page with the data from firebase 
     modal.onDidDismiss(data => {
@@ -79,13 +94,11 @@ export class MyMenuPage {
   }
 
 
-  logout(){
+  logout() {
     this.authService.doLogout()
-    .then(res => {
-      this.navCtrl.push("MyLoginPage");
-    })
+      .then(res => {
+        this.navCtrl.push("MyLoginPage");
+      })
   }
-
-
 
 }

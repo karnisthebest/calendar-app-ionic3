@@ -36,8 +36,7 @@ import { CalendarModule } from "ion2-calendar";
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-  
+    MyApp
   ],
   providers: [
     StatusBar,
