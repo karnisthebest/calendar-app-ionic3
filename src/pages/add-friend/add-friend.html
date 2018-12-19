@@ -16,5 +16,18 @@
 
 
 <ion-content padding>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="getThings()"></ion-searchbar>
+    <ion-item>Search Input : {{searchQuery}}</ion-item>
+    
+   
+
+    <ion-item *ngFor="let item of items">
+        <!-- <ion-thumbnail item-start>
+          <img [src]="item.payload.doc.data().image">
+        </ion-thumbnail> -->
+        <h2>{{item.payload.doc.data().title}}</h2>
+        <button ion-button clear item-end (click)="viewDetails(item.payload.doc.id,item.payload.doc.data())">Edit</button>
+     
+      </ion-item>
 
 </ion-content>
