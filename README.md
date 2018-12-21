@@ -1,4 +1,4 @@
-## Build a Complete Ionic App integrated with Firebase
+<!-- ## Build a Complete Ionic App integrated with Firebase
 
 In this ionic tutorial we will show you how to create a firebase application to perform all CRUD operations in an ionic 3 application.
 
@@ -16,7 +16,7 @@ These are some screenshots of the ionic 3 app we are going to build in this Ioni
 ![demo](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-ionic-app-integrated-with-firebase/ionic-firebase-register.png)
 ![demo](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-ionic-app-integrated-with-firebase/ionic-firebase-feed.png)
 ![demo](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-ionic-app-integrated-with-firebase/ionic-firebase-create.png)
-![demo](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-ionic-app-integrated-with-firebase/ionic-firebase-update.png)
+![demo](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-ionic-app-integrated-with-firebase/ionic-firebase-update.png) -->
 
 
 
