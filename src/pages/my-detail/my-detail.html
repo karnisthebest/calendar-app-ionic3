@@ -25,10 +25,7 @@
       <ion-icon name="ios-calendar-outline" item-start></ion-icon>
       Votes
     </ion-item>
-    <ion-item *ngFor="let item of newObj">
-      <ion-label>{{item.date}}</ion-label>
-      <ion-checkbox checked="false" [(ngModel)]="item.checked"></ion-checkbox>
-  </ion-item>
+   
     <!-- <ion-item *ngFor="let date of dateArray">
       {{date}}
     </ion-item> -->
@@ -39,7 +36,10 @@
     <ion-label>{{dateArray}}</ion-label>
     <ion-checkbox [(ngModel)]="dateArray"></ion-checkbox>
   </ion-item> -->
-  
+  <ion-item *ngFor="let item of newObj">
+    <ion-label>{{item.date}}</ion-label>
+    <ion-checkbox checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+</ion-item>
 
   
   
